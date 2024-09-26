@@ -6,18 +6,17 @@
 
 <b>Table of Contents:</b>
 - [Project Overview](#project-overview)
-  - [S-100 ATX Motherboard Image](#atx-dc2dc-board-image)
-  - [S-100 ATX Motherboard Features](#atx-dc2dc-board-features)
-  - [S-100 Voltage Outputs and Currents](#s-100-voltage-outputs-and-currents)
+  - [STM32 Microcontroller Features](#stm32-microcontroller-features)
+  - [S-100 ATX Motherboard Features](#s-100-atx-motherboard-features)
+  - [S-100 Voltage Outputs and Currents](#s-100-bus-voltage-outputs-and-currents)
   - [ATX PSU Requirements](#atx-psu-requirements)
-  - [S-100 ATX Motherboard Jumper Assignments](#atx-dc2dc-jumper-assignments)
-- [S-100 ATX Motherboard Thermal and Current Limits](#atx-dc2dc-thermal-and-current-limits)
-  - [7.5V or 8V Current and Thermal Limits](#7.5v-or-8v-current-and-thermal-limits)
-  - [24V Current and Thermal Limits](#24v-current-and-thermal-limits)
-  - [16V Current and Thermal Limits](#16v-current-and-thermal-limits)
-  - [Fan Requirements above 70% Loading](#fan-requirements-above-70%-loading)
+  - [S-100 ATX Motherboard Jumper and Connector Assignments](#s-100-atx-motherboard-jumper-and-connector-assignments)
+- [S-100 ATX Motherboard Thermal and Current Limits](#s-100-atx-motherboard-thermal-and-current-limits)
+  - [S-100 Bus Current and Thermal Limits](#s-100-bus-current-and-thermal-limits)
+  - [8-Inch FDD Current and Thermal Limits](#8-inch-fdd-current-and-thermal-limits)
+  - [Fan Requirements under High Loads](#fan-requirements-under-high-loads)
 - [Installation and Wiring Requirements](#installation-and-wiring-requirements)
-  - [S-100 ATX Motherboard Dimensions and Connector Locations](#atx-dc2dc-dimensions-and-connector-locations)
+  - [S-100 ATX Motherboard Connector Locations](#s-100-atx-motherboard-connector-locations)
   - [Connector Pinout Tables](#connector-pinout-tables)
     - [J1: ATX Main Power Connector](#j1-atx-main-power-connector)
     - [J3: ATX CPU Power Connector](#j3-atx-cpu-power-connector)
@@ -25,31 +24,45 @@
     - [J13-14: 8in. Disk DC Power Connectors](#j13-14-8in-disk-dc-power-connectors)
     - [J15: S-100 Bus Power Output Connector](#j15-s-100-bus-power-output-connector)
     - [J16: Voltage/Current Monitor Connector](#j16-voltagecurrent-monitor-connector)
-    - [J17: Control/Status Connector](#j17-controlstatus-connector)
-    - [J22: FAN Control Connector](#j22-fan-control-connector)
     - [J23-26: PC FAN Connectors](#j23-26-pc-fan-connectors)
 
 ## Project Overview ##
 
-To take advantage of the low-cost and availability of PC Cases and Power Supplies, the S-100 ATX Motherboard was implemented as a 12.0" x 9.6" ATX standard form factor to match commonly available PC Mid-Tower and larger cases.  At the same time, additional features were added to lower the system costs for a first time S-100 system builder.
+To take advantage of the low-cost and availability of PC Cases and Power Supplies, the S-100 ATX Motherboard was created and implemented as a 12.0" x 9.6" ATX standard form factor to match commonly available PC Mid-Tower and larger cases.  At the same time, additional features were added to lower the system costs for a first time S-100 system builder.
+
+An STM32 Microcontroller was added to enable control of non-vintage PC Interfaces and Power Supply Sequencing.  These features will be added as the maturity of the project increases and different STM32 Software Modules are added and updated.
+
+### STM32 Microcontroller Features ###
+
+<b>CURRENT RELEASE STM32 SOFTWARE FEATURES:</b>
+  - PC Power Switch Control (allows you to turn on/off the ATX PSU and S-100 ATX Motherboard Bus and 8" Drive voltages)
+  
+<b>NEXT RELEASE STM32 SOFTWARE FEATURES:</b>
+  - Target Availability of December 23rd, 2024
+  - STM32 USB-Drive Updater (eliminates the need for specialized STM32 programmers)
+  - PWM Fan Control via current usage feedback (uses current monitors to drive fan speed)
+  - ARGB Color LED Output to give a visual indication of system current load (i.e. heat)
+
+<b>Q1 2025 RELEASE STM32 SOFTWARE FEATURES:</b>
+  - Target Availability of March 31st, 2025
+  - USB Keyboard to PS/2 or Serial Conversion (enables use of common PC Keyboards with vintage systems)
+  - VGA Terminal Emulation (VT100/ANSI to start, others to follow)
+  - Front Panel Touchscreen LCD System Monitor (uses Adafruit TFT LCD Display 2090) for:
+    - Power Sequencing System Setup
+    - Keyboard and Terminal Settings
+    - Live and History Displays of voltages and current
 
 ### S-100 ATX Motherboard Features ###
-The S-100 ATX Motherboard replaces several discrete power supply setups using efficient switching regulator power sections (+7.5V or +8V, +/-16V, and +24) and a readily available ATX PSU of 550 Watts or greater (See <b>ATX PSU Requirements</b> below).
+The S-100 ATX Motherboard replaces several discrete power supply setups using efficient switching regulator power sections (+7.5V or +8V, +/-16V, and +24V) and a readily available ATX PSU of 550 Watts or greater (See <b>ATX PSU Requirements</b> below).
 
 <b>Current Features:</b>
   - ATX Motherboard Form Factor (12.0" x 9.6")
   - 12-Slot S-100 Bus with Series Terminated Bus Signals and an Active Termination Option
-  - STM32 Microcontroller for:
-    - S-100 Power Sequencing and Reset Control
-    - VGA Terminal Emulation (to be implemented)
-    - PWM FAN Control (to be implemented)
-    - ARGB Output (to be implemented)
-    - USB Keyboard to PS/2 or Serial Conversion (to be implemented)
-    - Front Panel LCD Display Power Monitor using Adafruit EYESPI Adapters (to be implemented)
-  - Uses ATX Power Connectors (24-pin, 8-pin and 6-pin)
-  - Supports common S-100 Bus Voltages
-  - Supports common 8" Disk Drive Voltages
-  - Three 3/4-pin 12V PC Fan Connectors (with Tach and PWM controlled by STM32)
+  - STM32 Microcontroller (see <b>STM32 Microcontroller Features</b> above)
+  - ATX Power Input Connectors (24-pin, 8-pin and 6-pin)
+  - Supports common S-100 Bus Voltages of +7.5V/8V and +/- 16V
+  - Supports common 8" Disk Drive Voltages of (+24V, +5V, and -5V)
+  - Three 3/4-pin 12V PC Fan Connectors (with Tach and PWM controlled by the STM32)
   - Microprocessor level (0 to 3.3V) voltage and current monitors for S-100 Bus and 8-in FDD voltages
   - Over-current and over-temperature shutdown protection
   - Input fuses for each power supply section
@@ -114,9 +127,9 @@ Even at those efficiency levels though, you will still have close to 18-watts of
 
 Depending on the direction and flow rate of the PC Case fans, the additional fan mounts on the S-100 Card Cage Brackets may not be needed, however the 90mm fans on the Card Cage act as insurance again localized heat buidup from the S-100 Cards' on-board regulators.
 
-### 7.5V or 8V Current and Thermal Limits ###
+### S-100 Bus Current and Thermal Limits ###
 
-Due to the thermal constraints shown above, the current limits for the 7.5V and 8V versions of the S-100 ATX Motherboard are catagorized into four catagories according to these operational limits.  The categories are 7.5V vs 8V and Fanless vs Fan cooling.
+Due to the thermal constraints shown above, the current limits for the +7.5V and +8V versions of the S-100 ATX Motherboard are catagorized into four catagories according to these operational limits.  The categories are +7.5V vs +8V and Fanless vs Fan cooling.
 
   | <b>Operational Mode</b> | <b>Current Limit</b> | 
   |------------------|-----------------|
@@ -127,19 +140,19 @@ Due to the thermal constraints shown above, the current limits for the 7.5V and 
 
   These are characterized limits, but convection currents, airflow patterns, and venting efficiencies within different enclosures can vary wildly, so please error on the side of caution.  More airflow is generally better. 
 
-### 24V Current and Thermal Limits ###
+  The +16V section takes advantage of a lower voltage and more efficient MOSFET than can be used in the 24V section (primarily because the higher switching voltages in the 24V section did not allow for using the lower voltage MOSTFET).
 
-The 24V 8" drive supply section behaves similarly to that of the 7.5v/8V section.  Above 2.7-amps of continuous loading, a fan is required.  Startup currents are generally not a factor in the thermal limits described here.
+  However, since the +16V section does use the more efficient MOSFET, it does not require a fan to achieve its full loading of 4-amps.  A fan may still be required depending on the loading for the other output voltages.
 
-### 16V Current and Thermal Limits ###
+  The -16V section (at 0.5A maximum) is more limited in its output current, since this supply rail is generally just used for RS-232 I/O output and has limited current draw.
 
-The 16V section takes advantage of a lower voltage and more efficient MOSFET than can be used in the 24V section (primarily because the higher switching voltages in the 24V section did not allow for using the lower voltage MOSTFET).
+### 8-Inch FDD Current and Thermal Limits ###
 
-However, since the 16V section does use the more efficient MOSFET, it does not require a fan to achieve its full loading of 4-amps.  A fan may still be required depending on the loading for the other output voltages.
+The 24V 8" floppy disk drive supply section behaves similarly to that of the 7.5v/8V section.  Above 2.7-amps of continuous loading, a fan is required.  Startup currents are generally not a factor in the thermal limits described here.
 
-### Fan Requirements above 70% Loading ###
+### Fan Requirements under High Loads ###
 
-Regardless of the individual current loadings, whenever the output currents are 70% or higher of the total current limits, a fan should be used.
+Regardless of the individual current loadings, whenever the +7.5V/+8V or +24V output currents are 70% or higher of the total rated current limits, a fan should be used.
 
 ## Installation and Wiring Requirements ##
 
@@ -153,11 +166,15 @@ For the lowest voltage drop (cable loss) of the power cables to the 8in. Drives,
 
 NOTE: On PVC vs THHN - THHN (Teflon Coated Wire) does not increase the current carrying capability of a wire.  It does increase the temperature rating before failure.  Simply put, it can dissipate more heat so a smaller wire can be used, but it comes at the cost of a larger voltage drop and more losses in the cable.  However, THHN can be used at the above wire guage limits as it offers better abrasion resistance, heat tolerance, and is easier to pull through tight spaces due to its Teflon coating.
 
-### S-100 ATX Motherboard Dimensions and Connector Locations ###
+### S-100 ATX Motherboard Connector Locations ###
 
 The following diagram shows the dimensions and the mounting holes and connector locations:
 
-![picture alt](Docs/ATX-DC2DC-Dimensions-and-Connectors.png "ATX_DC2DC_DIMENSIONS")
+![picture alt](Docs/s100_atx_mb_v1_board_diagram.jpg "S-100 ATX Motherboard Connector Locations")
+
+For a zoomable image, please download the PDF file below and zoom into the smaller details as required.
+
+[S-100 ATX Motherboard Connector Locations PDF File](Docs/s100_atx_mb_v1_board_diagram.pdf "S-100 ATX Motherboard Connector Locations.PDF")
 
 It is recommended that the S-100 ATX Motherboard be mounted in a case with standoffs of at least 0.25" to allow for airflow underneath the PCB for cooling at high loads.
 
@@ -224,6 +241,8 @@ It is recommended that the S-100 ATX Motherboard be mounted in a case with stand
 
 #### J13-14: 8in. Disk DC Power Connectors ####
 
+![picture alt](Docs/8IN-6P.jpg "8-Inch FDD Power Connector")
+
   | <b>Pin Number </b>   | <b>S-100 ATX Motherboard Function</b>    | <b>S-100 ATX Motherboard Use</b>      |
   |----------------|--------------------------------|-----------------------|
   | <b>1</b>     | +24V   | <b>+24V @ 4A supply for Disk Drives</b>|
@@ -272,4 +291,8 @@ The Voltage/Current Monitor signals allow for the use of a micro-controller or p
 
 n.b. - Pin 1 is at the bottom of the connector in the above diagram.
 
+## S-100 ATX Motherboard V1 Schematics ##
 
+The following schematic is provided for reference.
+
+[S-100 ATX Motherboard V1 Schematics PDF File](Docs/S100_ATX_MB_V1_Schematic.pdf "S-100 ATX Motherboard V1 Schematics PDF File")
