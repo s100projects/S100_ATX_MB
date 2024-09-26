@@ -25,6 +25,7 @@
     - [J15: S-100 Bus Power Output Connector](#j15-s-100-bus-power-output-connector)
     - [J16: Voltage/Current Monitor Connector](#j16-voltagecurrent-monitor-connector)
     - [J23-26: PC FAN Connectors](#j23-26-pc-fan-connectors)
+- [S-100 ATX Motherboard V1 Schematics](#s-100-atx-motherboard-v1-schematics)
 
 ## Project Overview ##
 
