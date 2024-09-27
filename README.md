@@ -270,11 +270,13 @@ It is recommended that the S-100 ATX Motherboard be mounted in a case with stand
   | <b>20</b>     | Ground* | <b>IEEE-696 Ground Pin, remove resistor for non-IEEE-696</b> |
   | <b>70</b>     | Ground* | <b>IEEE-696 Ground Pin, remove resistor for non-IEEE-696</b> |
  
- * = These pins are additional ground pins in the IEEE-696 Specification to provide a lower impedance ground path for IEEE-696 compliant S-100 Cards.  The grounds connections for these pins are through 0-ohm 0603 surface mount resistors.  If required for front panel S-100 systems, these resistors can be removed to enable the UNPROTECT (pin 20) and RUN (pin 70) signals.
+ * = These pins are additional ground pins in the IEEE-696 Specification to provide a lower impedance ground path for IEEE-696 compliant S-100 Cards.  The ground connections for these pins are through 0-ohm 0603 surface mount resistors.  If required for front panel S-100 systems, these resistors can be removed to enable the UNPROTECT (pin 20) and RUN (pin 70) signals.
 
 #### J16: Voltage/Current Monitor Connector ####
 
-The Voltage/Current Monitor signals allow for the use of a micro-controller or programmable Panel Meter to monitor and display the S-100 and 8-inch Drive power supply voltages and curents.
+![picture alt](Docs/MONITOR.jpg "Voltage-Current Monitor Pins")
+
+The Voltage/Current Monitor signals allow for the use of a micro-controller or programmable Panel Meter to monitor and display the S-100 and 8-inch Drive power supply voltages and curents.  These signals will also be used to calculate FAN RPM according to system current load.
 
   | <b>Pin Number </b>   | <b>S-100 ATX Motherboard Function</b>         | <b>S-100 ATX Motherboard Use</b>      |
   |----------------|--------------------------------|-----------------------|
@@ -289,11 +291,13 @@ The Voltage/Current Monitor signals allow for the use of a micro-controller or p
 
 #### J23-26: PC FAN Connectors ####
 
+![picture alt](Docs/FAN-4-PIN.jpg "4-Pin Fan Connectors")
+
   | <b>Pin Number </b>   | <b>S-100 ATX Motherboard Function</b>                       | <b>S-100 ATX Motherboard Use</b>      |
   |----------------|--------------------------------|-----------------------|
   | <b>1</b>     | Ground | <b>Ground for Fans</b>|
   | <b>2</b>     | +12.0V | <b>+12V Supply to PC Fan</b>|
-  | <b>3</b>     | TACH   | <b>Tach output from Fan</b>|
+  | <b>3</b>     | TACH   | <b>Tach output from Fan (Not Used)</b>|
   | <b>4</b>     | PWM    | <b>PWM Input for Fan</b>|
 
 n.b. - Pin 1 is at the bottom of the connector in the above diagram.
