@@ -22,7 +22,7 @@
     - [J3: ATX CPU Power Connector](#j3-atx-cpu-power-connector)
     - [J5: ATX PCIE Power Connector](#j5-atx-pcie-power-connector)
     - [J13-14: 8in. Disk DC Power Connectors](#j13-14-8in-disk-dc-power-connectors)
-    - [J15: S-100 Bus Power Output Connector](#j15-s-100-bus-power-output-connector)
+    - [J15: S-100 Bus Power Pins](#j15-s-100-bus-power-pins)
     - [J16: Voltage/Current Monitor Connector](#j16-voltagecurrent-monitor-connector)
     - [J23-26: PC FAN Connectors](#j23-26-pc-fan-connectors)
 - [S-100 ATX Motherboard V1 Schematics](#s-100-atx-motherboard-v1-schematics)
@@ -255,7 +255,9 @@ It is recommended that the S-100 ATX Motherboard be mounted in a case with stand
 
 \* = Supplied by ATX -12V (@ 0.5A) or -16V S-100 Supply (@ 0.3A)
 
-#### J15: S-100 Bus Power Output Connector ####
+#### J15: S-100 Bus Power Pins ####
+
+![picture alt](Docs/S-100-Power.jpg "S-100 Bus Power Pins")
 
   | <b>Pin Number </b>   | <b>S-100 ATX Motherboard Function</b>    | <b>S-100 ATX Motherboard Use</b>      |
   |----------------|--------------------------------|-----------------------|
@@ -265,7 +267,11 @@ It is recommended that the S-100 ATX Motherboard be mounted in a case with stand
   | <b>52</b>     | -16V   | <b>-16V up to 0.5A for S-100 Bus</b>|
   | <b>50</b>     | Ground | <b>Ground return for S-100 Bus</b>|
   | <b>100</b>     | Ground | <b>Ground return for S-100 Bus</b>|
+  | <b>20</b>     | Ground* | <b>IEEE-696 Ground Pin, remove resistor for non-IEEE-696</b> |
+  | <b>70</b>     | Ground* | <b>IEEE-696 Ground Pin, remove resistor for non-IEEE-696</b> |
  
+ * = These pins are additional ground pins in the IEEE-696 Specification to provide a lower impedance ground path for IEEE-696 compliant S-100 Cards.  The grounds connections for these pins are through 0-ohm 0603 surface mount resistors.  If required for front panel S-100 systems, these resistors can be removed to enable the UNPROTECT (pin 20) and RUN (pin 70) signals.
+
 #### J16: Voltage/Current Monitor Connector ####
 
 The Voltage/Current Monitor signals allow for the use of a micro-controller or programmable Panel Meter to monitor and display the S-100 and 8-inch Drive power supply voltages and curents.
