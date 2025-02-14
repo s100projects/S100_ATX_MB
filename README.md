@@ -26,6 +26,7 @@
     - [J16: Voltage/Current Monitor Connector](#j16-voltagecurrent-monitor-connector)
     - [J23-26: PC FAN Connectors](#j23-26-pc-fan-connectors)
 - [S-100 ATX Motherboard V1 Schematics](#s-100-atx-motherboard-v1-schematics)
+- [S-100 ATX Motherboard V4 3D Printer CAD Files](#s-100-atx-motherboard-v4-3d-printer-cad-files)
 
 ## Project Overview ##
 
@@ -307,3 +308,17 @@ n.b. - Pin 1 is at the bottom of the connector in the above diagram.
 The following schematic is provided for reference.
 
 [S-100 ATX Motherboard V1 Schematics PDF File](Docs/S100_ATX_MB_V1_Schematic.pdf "S-100 ATX Motherboard V1 Schematics PDF File")
+
+## S-100 ATX Motherboard V4 3D Printer CAD Files ##
+
+The following ZIP file (S100_ATX_MB_CAD_Files_v4.zip) contains the current 3D Printer STL files for the following S-100 Card Cage Components:
+  | <b>STL File </b>   | <b>S-100 ATX Motherboard Card Cage Component</b> |
+  |----------------|--------------------------------|
+  | <b>S100_ATX_MB_Side_Rail_v4.stl</b> | S-100 Card Guide Side Rail (print 2) |
+  | <b>S100_ATX_MB_CS_v1.stl</b> | S-100 Card Connector Support (screwed into from top side of connector) |
+  | <b>S100_ATX_MB_Cross_Brace_v4.stl</b> | Front S-100 Card Cage Brace (LCD Mount - sides screw into top of Card Guide Rail) |
+  | <b>S100_ATX_MB_Cross_Brace_v4a.stl</b> | Back S-100 Card Cage Brace (NO LCD Mount - sides screw into top of Card Guide Rail) |
+  | <b>S100_ATX_MB_Lower_LCD_Support_v4.stl</b> | Lower LCD Mount (screws into lower boss of Card Guide Rail) |
+  | <b>S100_ATX_MB_LCD_Cover_v4.stl</b> | LCD Bezel Cover (snaps onto Adafruit 2090 2.8" TFT LCD Display) |
+
+[S-100 ATX Motherboard V4 3D Printer CAD Files](Docs/S100_ATX_MB_CAD_Files_v4.zip "S-100 ATX Motherboard V4 3D Printer CAD Files")
