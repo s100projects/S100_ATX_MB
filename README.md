@@ -5,11 +5,12 @@
 <b>The S-100 ATX Motherboard uses a 550W or greater ATX PC power supply (PSU) to generate common S-100 Bus voltages for S-100 computers and floppy disk drives.  It can be mounted in ATX Mid Tower and larger cases that provide at least 7-1/4" of space from motherboard mounting plate to the top of the case.</b>
 
 <b>Table of Contents:</b>
-- [Quick Start Guide][#quick-start-guide]
-  - [Component Pieces][#component-pieces]
-  - [S-100 Card Guide Assembly][#s-100-card-guide-assembly]
-  - [ATX Case and Power Connections][#atx-case-and-power-connections]
-  - [Optional LCD Panel Install][#optional-lcd-panel-install]
+
+- [Quick Start Guide](#quick-start-guide)
+  - [Component Pieces](#component-pieces)
+  - [S-100 Card Guide Assembly](#s-100-card-guide-assembly)
+  - [ATX Case and Power Connections](#atx-case-and-power-connections)
+  - [Optional LCD Panel Install](#optional-lcd-panel-install)
 - [Project Overview](#project-overview)
   - [STM32 Microcontroller Features](#stm32-microcontroller-features)
   - [S-100 ATX Motherboard Features](#s-100-atx-motherboard-features)
@@ -84,21 +85,22 @@ An STM32 Microcontroller was added to enable control of non-vintage PC Interface
 
 <b>CURRENT RELEASE STM32 SOFTWARE FEATURES:</b>
   - PC Power Switch Control (allows you to turn on/off the ATX PSU and S-100 ATX Motherboard Bus and 8" Drive voltages)
-  
-<b>NEXT RELEASE STM32 SOFTWARE FEATURES:</b>
-  - Target Availability of December 23rd, 2024
-  - STM32 USB-Drive Updater (eliminates the need for specialized STM32 programmers)
-  - PWM Fan Control via current usage feedback (uses current monitors to drive fan speed)
-  - ARGB Color LED Output to give a visual indication of system current load (i.e. heat)
 
 <b>Q1 2025 RELEASE STM32 SOFTWARE FEATURES:</b>
   - Target Availability of March 31st, 2025
-  - USB Keyboard to PS/2 or Serial Conversion (enables use of common PC Keyboards with vintage systems)
-  - VGA Terminal Emulation (VT100/ANSI to start, others to follow)
+  - PWM Fan Control via current usage feedback (uses current monitors to drive fan speed)
+  - ARGB Color LED Output to give a visual indication of system current load (i.e. heat)
   - Front Panel Touchscreen LCD System Monitor (uses Adafruit TFT LCD Display 2090) for:
     - Power Sequencing System Setup
+    - Live Display of Voltages, Current. Wattage and Safe Drain-Down Voltages
+
+<b>Q3 2025 RELEASE STM32 SOFTWARE FEATURES:</b>
+  - Target Availability of September 31st, 2025
+  - Extended Front Panel Touchscreen LCD System Monitor Features:
     - Keyboard and Terminal Settings
-    - Live and History Displays of voltages and current
+    - Power History (low/over-voltage event counters)
+  - USB Keyboard to PS/2 or Serial Conversion (enables use of common PC Keyboards with vintage systems)
+  - VGA Terminal Emulation (VT100/ANSI to start, others to follow)
 
 ### S-100 ATX Motherboard Features ###
 The S-100 ATX Motherboard replaces several discrete power supply setups using efficient switching regulator power sections (+7.5V or +8V, +/-16V, and +24V) and a readily available ATX PSU of 550 Watts or greater (See <b>ATX PSU Requirements</b> below).
