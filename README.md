@@ -1,10 +1,15 @@
 # S-100 ATX Motherboard for PC Cases and Power Supplies # 
-![picture alt](Docs/S100_ATX_MB.jpg "S-100 ATX Motherboard")
+![picture alt](Docs/S100_ATX_MB-1.jpg "S-100 ATX Motherboard assembled into a test stand")
 
 ## Project Purpose and Goal ##
 <b>The S-100 ATX Motherboard uses a 550W or greater ATX PC power supply (PSU) to generate common S-100 Bus voltages for S-100 computers and floppy disk drives.  It can be mounted in ATX Mid Tower and larger cases that provide at least 7-1/4" of space from motherboard mounting plate to the top of the case.</b>
 
 <b>Table of Contents:</b>
+- [Quick Start Guide][#quick-start-guide]
+  - [Component Pieces][#component-pieces]
+  - [S-100 Card Guide Assembly][#s-100-card-guide-assembly]
+  - [ATX Case and Power Connections][#atx-case-and-power-connections]
+  - [Optional LCD Panel Install][#optional-lcd-panel-install]
 - [Project Overview](#project-overview)
   - [STM32 Microcontroller Features](#stm32-microcontroller-features)
   - [S-100 ATX Motherboard Features](#s-100-atx-motherboard-features)
@@ -28,7 +33,48 @@
 - [S-100 ATX Motherboard V1 Schematics](#s-100-atx-motherboard-v1-schematics)
 - [S-100 ATX Motherboard V4 3D Printer CAD Files](#s-100-atx-motherboard-v4-3d-printer-cad-files)
 
+## Quick Start Guide ##
+
+1. Examine the <b>S-100 ATX Motherboard</b> kit you received and make sure you have all of the component pieces.
+2. Locate your Side Rails and mount them to the PCB using 16 #4-20 x 3/8" tapping screws (screwing in from the bottom).
+3. If you are not mounting the Optional LCD, use the two Rear Cross Braces and mount one in front and the other in the rear using 8 #4-20 x 3/8" tapping screws.
+4. If you are mounting the Optional LCD, mount the Front Cross Brace (badged "S-100Projects) in the front, and the Rear Cross Brace in the rear using 8 #4-20 x 3/8" tapping screws.  Next, mount the Lower LCD Mount using two #4-20 x 3/8" tapping screws and then proceed to the Optional LCD Panel Install section below before mounting the motherboard in your PC case.
+
+### Component Pieces ###
+
+  | <b>QTY</b>   | <b>Component</b>                       |
+  |----------------|--------------------------------|
+  | <b>1</b>   | S-100Project S-100 ATX Motherboard |
+  | <b>2</b>   | 92mm 12V PC Side Rail Fans         |
+  | <b>2</b>   | 3D Printed Side Rails |
+  | <b>2</b>   | 3D Printed Rear Cross Braces |
+  | <b>1</b>   | 3D Printed Front Cross Brace |
+  | <b>1</b>   | 3D Printed Lower LCD Mount |
+  | <b>26</b>  | #4-20 x 3/8" Tapping Screws |
+  | <b>4</b>   | #2 x 1/4" Flat Head Screws |
+
+
+### S-100 Card Guide Assembly ###
+
+![picture alt](Docs/S100_ATX_MB_Chassis_Assy.jpg "S-100 ATX MB Chassis Assembly")
+
+### ATX Case and Power Connections ###
+
+Connect the 24-Pin ATX Power Connector, the 4-Pin ATX CPU Power Connector, and the 6-Pin PCI-E Power Connector from the ATX Power Supply to the S-100 ATX Motherboard Connectors.
+
+Connect up the labeled PC Connectors to the following headers on your S-100 ATX Motherboard:
+
+![picture alt](Docs/S100_ATX_MB-5.jpg "S-100 ATX MB PC Header Connections")
+
+### Optional LCD Panel Install ###
+
+![picture alt](Docs/S100_ATX_MB-4.jpg "S-100 ATX Motherboard optional LCD Control Panel")
+
+(In progress of documenting...)
+
 ## Project Overview ##
+
+![picture alt](Docs/S100_ATX_MB.jpg "S-100 ATX Motherboard")
 
 To take advantage of the low-cost and availability of PC Cases and Power Supplies, the S-100 ATX Motherboard was created and implemented as a 12.0" x 9.6" ATX standard form factor to match commonly available PC Mid-Tower and larger cases.  At the same time, additional features were added to lower the system costs for a first time S-100 system builder.
 
