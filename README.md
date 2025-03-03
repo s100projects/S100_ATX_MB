@@ -2,7 +2,7 @@
 ![picture alt](Docs/S100_ATX_MB-1.jpg "S-100 ATX Motherboard assembled into a test stand")
 
 ## Project Purpose and Goal ##
-<b>The S-100 ATX Motherboard uses a 550W or greater ATX PC power supply (PSU) to generate common S-100 Bus voltages for S-100 computers and floppy disk drives.  It can be mounted in ATX Mid Tower and larger cases that provide at least 7-1/4" of space from motherboard mounting plate to the top of the case.</b>
+The <b>S-100 ATX Motherboard</b> uses a 550W or greater ATX PC power supply (PSU) to generate common S-100 Bus voltages for S-100 computers and floppy disk drives.  It can be mounted in ATX Mid Tower and larger cases that provide at least 7-1/4" (or >185mm) of space from motherboard mounting plate to the top of the case <i>(as indicated in the Maximum CPU Cooler Height specification for such cases)</i>.  More height is almost always better to accommodate top-of-card connectors or that rare, extra-tall, S-100 card.
 
 <b>Table of Contents:</b>
 
