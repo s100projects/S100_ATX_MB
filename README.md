@@ -39,13 +39,13 @@ The <b>S-100 ATX Motherboard</b> uses a 550W or greater ATX PC power supply (PSU
 1. Examine the <b>S-100 ATX Motherboard</b> kit you received and make sure you have all of the component pieces.
 2. Locate your Side Rails and mount them to the PCB using 16 #4-20 x 3/8" tapping screws (screwing in from the bottom).
 3. If you are not mounting the Optional LCD, use the two Rear Cross Braces and mount one in front and the other in the rear using 8 #4-20 x 3/8" tapping screws.
-4. If you are mounting the Optional LCD, mount the Front Cross Brace (badged "S-100Projects) in the front, and the Rear Cross Brace in the rear using 8 #4-20 x 3/8" tapping screws.  Next, mount the Lower LCD Mount using two #4-20 x 3/8" tapping screws and then proceed to the Optional LCD Panel Install section below before mounting the motherboard in your PC case.
+4. If you are mounting the Optional LCD, mount the Front Cross Brace (badged "S-100Projects") in the front, and the Rear Cross Brace in the rear using 8 #4-20 x 3/8" tapping screws.  Next, mount the Lower LCD Mount using two #4-20 x 3/8" tapping screws and then proceed to the Optional LCD Panel Install section below before mounting the motherboard in your PC case.
 
 ### Component Pieces ###
 
   | <b>QTY</b>   | <b>Component</b>                       |
   |----------------|--------------------------------|
-  | <b>1</b>   | S-100Project S-100 ATX Motherboard |
+  | <b>1</b>   | S-100Projects S-100 ATX Motherboard |
   | <b>2</b>   | 92mm 12V PC Side Rail Fans         |
   | <b>2</b>   | 3D Printed Side Rails |
   | <b>2</b>   | 3D Printed Rear Cross Braces |
