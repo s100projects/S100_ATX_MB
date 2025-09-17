@@ -11,6 +11,9 @@ The <b>S-100 ATX Motherboard</b> uses a 550W or greater ATX PC power supply (PSU
   - [S-100 Card Guide Assembly](#s-100-card-guide-assembly)
   - [ATX Case and Power Connections](#atx-case-and-power-connections)
   - [Optional LCD Panel Install](#optional-lcd-panel-install)
+    - [Prepping the LCD](#prepping-the-lcd)
+    - [Downloading STM32 Programmer and Current LCD Firmware](#downloading-stm32-programmer-and-current-lcd-firmware)
+    - [Programming the STM32](#programming-the-stm32)
 - [Project Overview](#project-overview)
   - [STM32 Microcontroller Features](#stm32-microcontroller-features)
   - [S-100 ATX Motherboard Features](#s-100-atx-motherboard-features)
@@ -71,7 +74,56 @@ Connect up the labeled PC Connectors to the following headers on your S-100 ATX 
 
 ![picture alt](Docs/S100_ATX_MB-4.jpg "S-100 ATX Motherboard optional LCD Control Panel")
 
-(In progress of documenting...)
+The LCD Panel is not supplied with the S-100 ATX Motherboard, but it is readily available from Digikey and Adafruit.  You will also need a flat flex connector (listed below).
+
+  | <b>Distributor</b> | <b>Description</b> | <b>Part Number</b> | 
+  |------------------|-----------------|-----------------|
+  | <b>[Digikey](https://digikey.com)</b> | 2.8in Adafruit LCD | [1528-2848-ND](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2090/9919535) |
+  | <b>[Digikey](https://digikey.com)</b> | 18-pos 127mm Flat Flex Cable | [0150200192-ND](https://www.digikey.com/en/products/detail/molex/0150200192/2972305?s=N4IgTCBcDaIAwEYCscx0QTjAWgHIBEQBdAXyA) |
+  | <b>[Adafruit](https://adafruit.com)</b> | 2.8in Adafruit LCD | [2090](https://www.adafruit.com/product/2090) |
+  | <b>[Adafruit](https://adafruit.com)</b> | 18-pos 200mm Flat Flex Cable | [5240](https://www.adafruit.com/product/5240) |
+
+If you would like a longer Flex Cable (say to move the LCD Display to another part of the ATX enclosure), you can search Digikey or Adafruit for a cable with the following specifications:
+
+- Pitch: 0.5mm (0.020in)
+- Positions: 18
+- Termination: Top on One Side, Bottom on Other, Backers on Both Sides
+
+Here is a 12in (304.8mm) example: [Molex 0151660204](https://www.digikey.com/en/products/detail/molex/0151660204/3281085?s=N4IgjCBcoOw1oDGUBmBDANgZwKYBoQB7KAbRAA4AGATipAF0CAHAFyhAGUWAnASwDsA5iAC%2BBctQQhkkdNnxFSIAKwAmMKobM2kTjwHCxIVcvJSZc3AWKQyAFjABmcgDZJjEK3Zc%2BQ0QXUXF3NUTCtFW3AzDy9dADkAVwBbHD5kIwBaTWhpKB4EhRsydxEjbLJENAAjDBwAAhQmZHoRIA)
+
+#### Prepping the LCD ####
+
+You will need to install some "Solder Jumpers" on the 2.8in LCD to enable SPI mode.
+You can find the guide for soldering the correct jumpers here: [Adafruit SPI Mode Jumpers](https://learn.adafruit.com/adafruit-2-4-color-tft-touchscreen-breakout/spi-wiring-test)
+
+#### Downloading STM32 Programmer and Current LCD Firmware ####
+
+You may need to create an account on [st.com](https://www.st.com) to download the programmer.
+Follow this link to download and then install the STM32 Cube Programmer: [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html).
+
+You Will also need an ST-Link V2 Programmer. which will need a modification for Rev 1.0 motherboards to support a hardware reset from the ST-Link V2.  
+I am supplying the modified ST-Link V2 adapters with new orders.  For current owners of the S-100 ATX Motherboard, I will send out the modified ST-Link V2 Programmers upon request.
+
+For the current S-100 ATX Motheboard Firmware with LCD support, download it here: [S100_ATX_MB_CONT_V4_R-07.zip](docs/S100_ATX_MB_CONT_V4_R-07.zip).
+
+If you would like to revert back to the non-LCD enabled firmware, you can download it here: [S100_ATX_MB_CONT_V1_R0-2.elf](docs/S100_ATX_MB_CONT_V1_R0-2.elf).
+
+#### Programming the STM32 ####
+
+Start the STM32CubeProgrammer: (you should see an initial display like below).  
+Make sure the "Reset Mode" in the "ST-LINK configuration" dialog box is set to "Hardware reset" and then click on "Connect":
+![picture alt](Docs/stm32_prog1.jpg "STM32 Programming Step 1")
+
+The programmer should now connect to the STM32 and show you a quick dump at address 0x08000000 (the contents do not matter at this stage).
+![picture alt](Docs/stm32_prog2.jpg "STM32 Programming Step 2")
+
+Next, select the '+' tab next to "Device memory" and select "Open file" and navigate to where you downloaded the S100_ATX_MB_V4_R0-7.elf file and select it and click "Open".
+![picture alt](Docs/stm32_prog3.jpg "STM32 Programming Step 3")
+
+Next, click "Download" and once complete, select the "Disconnect" button.
+![picture alt](Docs/stm32_prog4.jpg "STM32 Programming Step 4")
+
+At this point, you may need to power cycle the ATX PSU to get the display to come up.
 
 ## Project Overview ##
 
