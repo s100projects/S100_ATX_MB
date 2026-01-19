@@ -102,11 +102,16 @@ You may need to create an account on [st.com](https://www.st.com) to download th
 Follow this link to download and then install the STM32 Cube Programmer: [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html).
 
 You will also need an ST-Link V2 Programmer. which will need a modification for Rev 1.0 motherboards to support a hardware reset from the ST-Link V2.  
-I am supplying the modified ST-Link V2 adapters with new orders.  For current owners of the S-100 ATX Motherboard, I will send out the modified ST-Link V2 Programmers upon request.
 
-For the current S-100 ATX Motheboard Firmware with LCD support, download it here: [S100_ATX_MB_CONT_V4_R-07.zip](docs/S100_ATX_MB_CONT_V4_R-07.zip).
+For Rev. 2.0 S-100 ATX Motherboard users, no modfications are necessary for the ST-Link V2 Programmer.
 
-If you would like to revert back to the non-LCD enabled firmware, you can download it here: [S100_ATX_MB_CONT_V1_R0-2.elf](docs/S100_ATX_MB_CONT_V1_R0-2.elf).
+For Rev. 1.0 Motherboard owners, I am supplying the modified ST-Link V2 adapters upon request.
+
+For users of the Rev. 1.0 S-100 ATX Motheboard with LCD support, download the latest firmware here: [S100_ATX_MB_CONT_V4_R-08.zip](docs/S100_ATX_MB_CONT_V4_R-08.zip).
+
+For users of the Rev. 2.0 S-100 ATX Motheboard with LCD support, download the latest firmware here: [S100_ATX_MB_CONT_REV2_V4_R-08.zip](docs/S100_ATX_MB_CONT_REV2_V4_R-08.zip).
+
+If you would like to revert back to the non-LCD enabled firmware (Rev. 1.0 Motherboards only), you can download it here: [S100_ATX_MB_CONT_V1_R0-2.elf](docs/S100_ATX_MB_CONT_V1_R0-2.elf).
 
 #### Programming the STM32 ####
 
