@@ -107,11 +107,11 @@ For Rev. 2.0 S-100 ATX Motherboard users, no modfications are necessary for the 
 
 For Rev. 1.0 Motherboard owners, I am supplying the modified ST-Link V2 adapters upon request.
 
-For users of the Rev. 1.0 S-100 ATX Motheboard with LCD support, download the latest firmware here: [S100_ATX_MB_CONT_V4_R-08.zip](docs/S100_ATX_MB_CONT_V4_R-08.zip).
+For users of the Rev. 1.0 S-100 ATX Motheboard with LCD support, download the latest firmware here: [S100_ATX_MB_CONT_V4_R-08.zip](Docs/S100_ATX_MB_CONT_V4_R-08.zip).
 
-For users of the Rev. 2.0 S-100 ATX Motheboard with LCD support, download the latest firmware here: [S100_ATX_MB_CONT_REV2_V4_R-08.zip](docs/S100_ATX_MB_CONT_REV2_V4_R-08.zip).
+For users of the Rev. 2.0 S-100 ATX Motheboard with LCD support, download the latest firmware here: [S100_ATX_MB_CONT_REV2_V4_R-08.zip](Docs/S100_ATX_MB_CONT_REV2_V4_R-08.zip).
 
-If you would like to revert back to the non-LCD enabled firmware (Rev. 1.0 Motherboards only), you can download it here: [S100_ATX_MB_CONT_V1_R0-2.elf](docs/S100_ATX_MB_CONT_V1_R0-2.elf).
+If you would like to revert back to the non-LCD enabled firmware (Rev. 1.0 Motherboards only), you can download it here: [S100_ATX_MB_CONT_V1_R0-2.elf](Docs/S100_ATX_MB_CONT_V1_R0-2.elf).
 
 #### Programming the STM32 ####
 
